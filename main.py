@@ -24,4 +24,5 @@ print('Captain America',slovar['results'][0]['powerstats']['intelligence'])
 t=requests.get(' https://superheroapi.com/api/2619421814940190/search/Thanos')
 slovar= t.json()
 print('Thanos',slovar['results'][0]['powerstats']['intelligence'])
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+
+hello=True
