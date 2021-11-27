@@ -35,7 +35,7 @@ class YaUploader:
 if __name__ == '__main__':
     # Получить путь к загружаемому файлу и токен от пользователя
     path_to_file_on_computer = "test.txt"
-    token = "AQAAAABXhZfHAADLW0t9sCIlwkPlnOFc_Q_3CBM"
+    token = ""
     uploader = YaUploader(token)
     result = uploader.upload(path_to_file_on_computer)
     #result = uploader.get_link_ya("test/net").get("href", "")
