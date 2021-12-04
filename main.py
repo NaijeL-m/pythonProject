@@ -59,7 +59,7 @@ def intellectus(list_hero):
             max[1] = hero
     return max[1]
 
-# Press the green button in the gutter to run the script.
+# Zadacha1
 
 s = ['Hulk','Captain America','Thanos']
 print(intellectus(s))
