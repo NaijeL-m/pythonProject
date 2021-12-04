@@ -44,10 +44,11 @@ if __name__ == '__main__':
 def print_hi(name):
     # Use a breakpoint in the code line below to debug your script.
     print(f'Hi!!!, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+
 t=requests.get(' https://superheroapi.com/api/2619421814940190/search/Thanos')
 slovar= t.json()
 print('Thanos',slovar['results'][0]['powerstats']['intelligence'])
-a=0
+
 def intellectus(list_hero):
     max=[0,""]
     for hero in list_hero:
@@ -63,16 +64,6 @@ def intellectus(list_hero):
 s=['Hulk','Captain America','Thanos']
 print(intellectus(s))
 
-x=requests.get(' https://superheroapi.com/api/2619421814940190/search/Hulk')
-slovar= x.json()
-print('Hulk',slovar['results'][0]['powerstats']['intelligence'])
 
-k=requests.get(' https://superheroapi.com/api/2619421814940190/search/Captain America')
-slovar= k.json()
-print('Captain America',slovar['results'][0]['powerstats']['intelligence'])
-
-t=requests.get(' https://superheroapi.com/api/2619421814940190/search/Thanos')
-slovar= t.json()
-print('Thanos',slovar['results'][0]['powerstats']['intelligence'])
 
 hello=True
