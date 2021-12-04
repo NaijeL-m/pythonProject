@@ -18,7 +18,7 @@ class YaUploader:
     def get_link_ya(self,adres_disk_file):
         url="https://cloud-api.yandex.net/v1/disk/resources/upload"
         headers=self.ya_headers()
-        params={"path":adres_disk_file}
+        params={"path":adres_disk_file, "overwrite": "true"}
         response=requests.get(url, headers=headers, params=params)
         return response.json()
 
@@ -35,7 +35,7 @@ class YaUploader:
 if __name__ == '__main__':
     # Получить путь к загружаемому файлу и токен от пользователя
     path_to_file_on_computer = "test.txt"
-    token = ""
+    token = "AQAAAABXhZfHAADLW0t9sCIlwkPlnOFc_Q_3CBM"
     uploader = YaUploader(token)
     result = uploader.upload(path_to_file_on_computer)
     #result = uploader.get_link_ya("test/net").get("href", "")
@@ -44,9 +44,24 @@ if __name__ == '__main__':
 def print_hi(name):
     # Use a breakpoint in the code line below to debug your script.
     print(f'Hi!!!, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
-
+t=requests.get(' https://superheroapi.com/api/2619421814940190/search/Thanos')
+slovar= t.json()
+print('Thanos',slovar['results'][0]['powerstats']['intelligence'])
 a=0
+def intellectus(list_hero):
+    max=[0,""]
+    for hero in list_hero:
+        x=requests.get(' https://superheroapi.com/api/2619421814940190/search/'+hero)
+        intell=int(x.json()['results'][0]['powerstats']['intelligence'])
+        if intell > max[0]:
+            max[0]=intell
+            max[1]=hero
+    return max[1]
+
 # Press the green button in the gutter to run the script.
+
+s=['Hulk','Captain America','Thanos']
+print(intellectus(s))
 
 x=requests.get(' https://superheroapi.com/api/2619421814940190/search/Hulk')
 slovar= x.json()
